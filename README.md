@@ -9,7 +9,7 @@ This is a project uses template of [Svelte](https://svelte.dev) apps.
 
 ```bash
 git clone https://github.com/agate106k/counter_app.git
-cd svelte-app
+cd counter_app
 ```
 
 *Note that you will need to have [Node.js](https://nodejs.org) installed.*
@@ -20,7 +20,7 @@ cd svelte-app
 Install the dependencies...
 
 ```bash
-cd svelte-app
+cd counter_app
 npm install
 ```
 
