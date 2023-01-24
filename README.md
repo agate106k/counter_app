@@ -8,7 +8,7 @@ This is a project uses template of [Svelte](https://svelte.dev) apps.
 
 
 ```bash
-npx degit sveltejs/template svelte-app
+git clone https://github.com/agate106k/counter_app.git
 cd svelte-app
 ```
 
