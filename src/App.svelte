@@ -1,12 +1,14 @@
 <script lang="ts">
+	// main.tsより全体タイトル取得
   export let name: string;
   import { onMount } from 'svelte';
   interface Counter {
 		title: string;
 		count: number;
   }
-
+	// デフォルトで一つのカウンターを定義
   let counters: Counter[] = [{ title: "Counter 1", count: 0 }];
+	// 合計値取得用
   let total = 0;
 
   $:total = counters.reduce((acc, curr) => acc + curr.count, 0);
@@ -16,23 +18,23 @@
       total += counter.count;
 		});
   });
-
+	// カウンター追加アクション
   function handleAddCounter() {
     counters.push({ title: "New Counter", count: 0 });
     counters = counters;
   }
-
+	// カウンター削除アクション
   function handleRemoveCounter(index: number) {
     total -= counters[index].count;
     counters.splice(index, 1);
     counters = counters;
   }
-
+	// カウンターの名前が変化した時の挙動
   function handleTitleChange(e: Event, index: number) {
     counters[index].title = (e.target as HTMLInputElement).value;
-	counters[index].title = counters[index].title
+		counters[index].title = counters[index].title
   }
-
+// toalの数を制御
   function handleCountChange(e: Event, index: number) {
     total -= counters[index].count;
     counters[index].count = Number((e.target as HTMLInputElement).value);
@@ -69,6 +71,7 @@
 			</div>
 
 <style>
+	/* 以下css */
 	.site_name{
 		display: flex;
 		flex-direction: column;
